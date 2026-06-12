@@ -1,0 +1,7 @@
+credits        : Programming Fundamentals Team
+icon:
+  type: material-icon-theme:python
+  color: "3572A5"
+auth           : 0
+labStepsAutoNumber: true
+ignore         :
