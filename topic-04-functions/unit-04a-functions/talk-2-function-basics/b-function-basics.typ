@@ -84,22 +84,22 @@ greet()     # Now it runs
 greet()     # Runs again
 ```
 
-#pause
+#slide[
 
 *Functions can call other functions:*
 
 ```python
 def draw_line():
-    print("-" * 30)
+    print("-" * 30)  # 30 hyphens
 
 def print_header(title):
     draw_line()
     print(title)
     draw_line()
 
-print_header("Student Report")
+print_header("Student Report") # prints ---- Student Report ----
 ```
-
+]
 = Void Functions and None
 
 A function that has no `return` statement implicitly returns the special value `None`.
@@ -117,7 +117,6 @@ print(type(result))         # <class 'NoneType'>
 
 `None` represents "no value" in Python. It is *not* zero, not an empty string — it is the absence of a value.
 
-#pause
 
 *Common mistake:*
 
