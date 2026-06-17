@@ -1,6 +1,6 @@
 ---
 icon:
-  type: carbon:scope
+  type: f7:scope
   color: purple
 ---
 Scope of Variables
