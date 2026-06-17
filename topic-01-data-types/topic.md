@@ -1,9 +1,9 @@
 ---
 icon:
-  type: fluent:hand-wave-16-regular
-  color: green
+  type: codicon:variable-group
+  color: blue
 ---
-# 01: First Contact
+# 01: Data Types
 
-Introduction to the module
+data types
 
