@@ -4,5 +4,5 @@ icon:
   color: red
 ---
 # 02: Conditional Control
-if, if-else, if-elif-else, rel ops, logical opss
+if, if-else, if-elif-else, rel ops, logical ops
 

@@ -340,6 +340,9 @@ if age < 18:
 ```]
     ],
     uncover("2-")[
+      #stack(
+        spacing: 0.5em,
+        [Simplified with if-else],
       rect(fill: luma(230), stroke: 2pt + black, radius: 4pt, inset: 10pt)[
         #text(size: 0.75em)[```python
 # Simplified with if-else
@@ -349,10 +352,10 @@ if age >= 18:
 else:
     print("You are a minor.")
 ```]
-      ]
+      ])
     ]
   )
-  #pause
+
   #pause
   - The `if-else` version is cleaner — there are only two outcomes, so `else` handles the second case directly.
 ]

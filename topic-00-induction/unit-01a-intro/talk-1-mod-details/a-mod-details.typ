@@ -51,52 +51,52 @@
   }
 }
 #page(footer: none)[
-  #v(1fr)
+
   #align(center)[
     #text(size: 24pt, weight: "bold")[Programming Fundamentals]
-    #v(0.5em)
+    #v(0.2em)
     #text(size: 16pt, weight: "bold")[Using Python]
-    #v(0.5em)
+    #v(0.2em)
     #text(size: 16pt)[Semester 1 2026]
-    #v(0.3em)
+    #v(0.2em)
     #text(size: 14pt)[Certificate in Computer Science]
-    #v(2em)
+    #v(1em)
     #text(size: 13pt)[Course Outline and Essential Information]
   ]
-  #v(1fr)
+
   #align(center)[
 
     #grid(
       columns: 2,
       gutter: 3em,
       align(center)[
-        #image("assets/siobhan.png", width: 4cm)
+        #image("assets/siobhan.png", width: 3cm)
         #v(0.4em)
         *Siobhán Roche* \
         #link("mailto:siobhan.roche@setu.ie")[siobhan.roche\@setu.ie]
       ],
       align(center)[
-        #image("assets/maireadMeagherPP.jpg", width: 5cm)
-        #v(0.4em)
+        #image("assets/maireadMeagherPP.jpg", width: 4cm)
+        #v(0.3em)
         *Mairéad Meagher* \
         #link("mailto:mairead.meagher@setu.ie")[mairead.meagher\@setu.ie]
       ],
     )
       #text(size: 16pt, weight:"bold")[Module Lecturing Team ]
-  #v(1fr)
-]]
-// ═════════════════════════════════════════════════════════════════════════════
+
+]
+// ── Table of Contents 
 
 #show outline.entry: it => align(left, it)
 #align(center)[
   #outline(
-    title: text(size: 20pt, weight: "bold")[Table of Contents],
+    title: text(size: 16pt, weight: "bold")[Table of Contents],
     depth: 2,
     indent: 1em,
   )
-]
-#v(1fr)
-#pagebreak()
+]]
+
+
 // ═════════════════════════════════════════════════════════════════════════════
 = Lecturers
 
