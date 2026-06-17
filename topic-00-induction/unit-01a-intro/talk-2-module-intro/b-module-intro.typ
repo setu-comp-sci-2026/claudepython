@@ -12,7 +12,7 @@
     color: rgb("#c6f1c7"),
     title: [Programming Fundamentals ],
     subtitle: [Using Python],
-    author: [Mairead Meagher, Siobhan Roche, Peter Windle],
+    author: [Mairead Meagher, Siobhan Roche],
     date: datetime.today(),
     institution: [SETU],
 
@@ -53,23 +53,8 @@
       ]
     )
   ], 
-  
-  // Peter Windle
-  rect(fill: rgb("#20B2AA"), inset: 1em)[
-    #grid(
-      columns: (2fr, 1fr),
-      gutter: .5em,
-      [
-        *Peter Windle*
-        - Profile: #link("https://www.setu.ie/staff/peter-windle")[setu.ie/staff/peter-windle]
-        - Email: #link("mailto:peter.windle@setu.ie")[peter.windle\@setu.ie]
-      ],
-      align(center)[
-        #image("assets/pete.png", width: 25%)
-      ]
-    )
-  ],
-  
+
+
   // Mairead Meagher
   rect(fill: rgb("#20B2AA"), inset: 1em)[
     #grid(
@@ -251,7 +236,7 @@ TODO: Add schedule content here.
 
 = Assessment and Interviews
 
- - 100% Continuous Assessment (CA).
+- 100% Continuous Assessment (CA).
 - All Individual assignments (no team-based ones).
 - Submit via Moodle assignment dropboxes.
 - Hard deadlines; extensions only permitted if mitigating circumstances apply.
@@ -259,7 +244,8 @@ TODO: Add schedule content here.
 
 = Use of Slack 
 
-
+ - main channel for learning and support.
+ - Join the Slack channel soon. Link on the tutors page.
 
 == Decision Diagram
 
