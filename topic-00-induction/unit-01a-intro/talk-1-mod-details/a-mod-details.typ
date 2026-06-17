@@ -133,7 +133,7 @@ We will be using Python and will use the Visual Studio Code editor to code in Py
     *Visual Studio Code*  
   ]
 )
-
+#pagebreak()
 = Learning Technologies
 
 In order to maximise our ability to connect with one another and to make our classes as accessible as possible for everyone, we will use both synchronous and asynchronous learning technologies during this module. They will include:
@@ -164,11 +164,12 @@ Each week of the module is structured as follows:
   [*Seminar 2 - 12:15 - 2:00pm*],
   [ synchronous webinar via youtube and available later all via tutors],
   [ synchronous webinar via youtube and available later all via tutors],
-  [*Lab 1 - 7 to 8 pm*],
+  [*Lab#footnote[We call these 'labs' because traditionally they were done in 'labs' which we now call computer rooms. Old habits, however… tutors uses this terminology also. You will not need white coats!] 1 - 7 to 8 pm*],
   [*Lab 2 - 7 to 8 pm*],
   [tutor is available on Zoom ],
   [tutor is available on Zoom ],
 )
+
 
 
 - Each week, we will have two 2-hour webinars. These will introduce topics.
@@ -189,8 +190,6 @@ Each week of the module is structured as follows:
 )[
   _Please do not be tempted to look at the solution before you have tried the exercise. This will give you a false sense of confidence in your understanding._
 ]
-
-#footnote[We call these 'labs' because traditionally they were done in 'labs' which we now call computer rooms. Old habits, however… tutors uses this terminology also. You will not need white coats!]
 
 #pagebreak()
 
