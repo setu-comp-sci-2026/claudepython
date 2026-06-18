@@ -39,7 +39,7 @@
   config-info(
     color: rgb("#c6f1c7"),
     title: [Programming Fundamentals],
-    subtitle: [Conditional Statements],
+    subtitle: [Boolean Algebra],
     author: [Programming Fundamentals Team],
     date: datetime.today(),
     institution: [SETU],
@@ -72,8 +72,6 @@
 
 
 = Boolean Conditions
-
-
 
 
 #slide[
@@ -134,10 +132,11 @@
 
 
 
-= Logical Operators
+= Boolean Algebra
 
 #slide[
 - Logical operators operate on Boolean values and produce a new Boolean value as a result.
+- The way they behave depends on the operator they are used with. This behaviour is called Boolean algebra.
 #pause
 - The three logical operators in Python are:
 
