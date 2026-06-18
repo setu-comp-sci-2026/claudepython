@@ -278,6 +278,67 @@ Python has 4 Primitive Data Types:
 
 ]
 
+== String Operations: Concatenation and Repetition
+
+#slide[
+  #text(size: .8em)[
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  
+  [
+    *Concatenation* joins strings together using `+`:
+
+    ```python
+    first = "Hello"
+    second = "World"
+    result = first + ", " + second + "!"
+    print(result)   # Hello, World!
+    ```
+
+    *Repetition* repeats a string using `*`:
+
+    ```python
+    line    = "-" * 10
+    stars   = "*" * 20
+    spacer  = "=-" * 10
+
+    print(line)     # ----------
+    print(stars)    # ********************
+    print(spacer)   # =-=-=-=-=-=-=-=-=-=-
+    ```
+  ],
+  [
+    #pause
+    You will use repetition frequently to draw separator lines in output:
+
+    ```python
+    def draw_line():
+        print("-" * 30)
+
+    draw_line()
+    print("Student Report")
+    draw_line()
+    ```
+
+    Output:
+    ```
+    ------------------------------
+    Student Report
+    ------------------------------
+    ```
+
+    #block(
+      fill: blue.lighten(85%),
+      stroke: (paint: blue.lighten(50%), thickness: 1pt),
+      radius: 6pt,
+      inset: 10pt,
+    )[
+      *Note:* `str * n` repeats the string `n` times. `n` must be an *integer*.
+    ]
+  ]
+)
+]]
 == Data Types: Boolean (bool)
 
 #slide[

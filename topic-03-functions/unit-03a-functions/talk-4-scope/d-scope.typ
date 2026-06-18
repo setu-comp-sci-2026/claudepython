@@ -18,6 +18,24 @@
     logo: my-logo,
   ),
 )
+
+#let note(body) = block(
+  fill: rgb("#c6f1c7"),
+  stroke: (paint: rgb("#4caf50"), thickness: 1.5pt),
+  radius: 8pt,
+  inset: 16pt,
+  width: 100%,
+  body
+)
+#show raw.where(block: true): it => block(
+  fill: rgb("#dbeafe"),
+  stroke: (paint: rgb("#3572A5"), thickness: 1.5pt),
+  radius: 6pt,
+  inset: 12pt,
+  width: 100%,
+  it
+)
+
 #set heading(numbering: numbly("{1}.", default: "1.1"))
 #set page(background: place(left + top, dx: 8.5em, dy: 1em)[#opaque-logo])
 #title-slide()
@@ -60,7 +78,7 @@ Python searches for names in this order:
   [B], [Built-in — Python's built-ins], [`len`, `print`, `range`],
 )
 
-#pause
+#pagebreak()
 
 ```python
 x = "global"
@@ -77,7 +95,7 @@ outer()   # enclosing
 
 = Avoiding Global Variables
 
-*Reading* a global is fine. *Modifying* a global from inside a function is a code smell.
+*Reading* a global is fine. *Modifying* a global from inside a function is a #text(fill: red)[`code smell`].
 
 ```python
 # Bad pattern — hidden global state
@@ -92,7 +110,7 @@ add_to_total(25)
 print(total)    # 35
 ```
 
-#pause
+#pagebreak()
 
 *Better pattern — pass data in, return data out:*
 
@@ -108,7 +126,7 @@ print(total)    # 35
 
 Now the function is *testable* and has *no side effects*.
 
-= Pure Functions
+= Pure/Impure Functions
 
 A *pure function*:
 1. Always produces the same output for the same input
@@ -128,9 +146,9 @@ print(clamp(-5, 0, 100))    # 0
 print(clamp(50, 0, 100))    # 50
 ```
 
-#pause
+#pagebreak()
 
-*Impure* — has a side effect (printing, reading input, modifying external state):
+*Impure functions* — have  side effect/s (printing, reading input, modifying external state):
 
 ```python
 def get_score():       # impure — depends on user input
@@ -139,6 +157,9 @@ def get_score():       # impure — depends on user input
 def log_result(msg):   # impure — side effect (printing)
     print(msg)
 ```
+#note[
+  *NOTE:*We need both pure and impure functions. It is important to separate them. For instance a pure function `clamp` can be used in impure functions `log_result` and `get_score`. It is good practice to write pure functions first and then impure functions.
+  ]
 
 = Constants and Module-Level Names
 
@@ -162,31 +183,99 @@ print(f"Circumference: {circle_circumference(5):.2f}")
 
 Constants are fine at module level — they are *not expected to change* and are clearly marked.
 
-= Scope in Practice
+= Intermediate Variables
+
+An *intermediate variable* holds a computed result temporarily — a named stepping stone between an input and a final output.
+
+#pause
 
 ```python
-def calculate_statistics(numbers):
-    """Return mean, min, max for a list of numbers."""
-    if not numbers:
-        return None, None, None
+# Without intermediate variables — hard to read and debug
+def circle_stats(r):
+    return 3.14159 * r ** 2, 2 * 3.14159 * r
 
-    count = len(numbers)        # local
-    total = sum(numbers)        # local
-    mean = total / count        # local
-    minimum = min(numbers)      # local
-    maximum = max(numbers)      # local
-
-    return mean, minimum, maximum
-
-data = [23, 45, 12, 67, 34, 89, 56]
-avg, lo, hi = calculate_statistics(data)
-print(f"Mean: {avg:.1f}")
-print(f"Range: {lo} to {hi}")
-
-# count, total, mean, minimum, maximum don't exist here
+# With intermediate variables — clear and debuggable
+def circle_stats(r):
+    pi            = 3.14159
+    area          = pi * r ** 2
+    circumference = 2 * pi * r
+    return area, circumference
 ```
 
-All intermediate variables are local to the function — clean and encapsulated.
+#pagebreak()
+
+*Benefits:*
+
+- *Readability* — the name says what the value means
+- *Debugging* — you can `print()` any step to inspect it
+- *Reuse* — compute once, use multiple times (e.g. `pi` above)
+- *Scope* — they are local to the function, discarded when it returns
+
+#pagebreak()
+
+*When to use them:*
+
+```python
+# Good — complex sub-expression deserves a name
+def monthly_payment(principal, annual_rate, years):
+    monthly_rate = annual_rate / 12
+    n_payments   = years * 12
+    factor       = (1 + monthly_rate) ** n_payments
+    return principal * monthly_rate * factor / (factor - 1)
+```
+
+#pagebreak()
+
+*When NOT to bother:*
+
+```python
+# Unnecessary — wrapping something already obvious adds noise
+def square(n):
+    result = n * n   # pointless intermediate variable
+    return result
+
+# Just write:
+def square(n):
+    return n * n
+```
+
+#pagebreak()
+
+#block(
+  fill: blue.lighten(85%),
+  stroke: (paint: blue.lighten(50%), thickness: 1pt),
+  radius: 8pt,
+  inset: 14pt,
+  width: 100%,
+)[
+  *Rule of thumb:* if naming the value makes the code clearer or avoids computing it twice, use an intermediate variable. If it is a one-use wrapper around something already obvious, skip it.
+]
+
+// = Scope in Practice
+
+// ```python
+// def calculate_statistics(numbers):
+//     """Return mean, min, max for a list of numbers."""
+//     if not numbers:
+//         return None, None, None
+
+//     count = len(numbers)        # local
+//     total = sum(numbers)        # local
+//     mean = total / count        # local
+//     minimum = min(numbers)      # local
+//     maximum = max(numbers)      # local
+
+//     return mean, minimum, maximum
+
+// data = [23, 45, 12, 67, 34, 89, 56]
+// avg, lo, hi = calculate_statistics(data)
+// print(f"Mean: {avg:.1f}")
+// print(f"Range: {lo} to {hi}")
+
+// # count, total, mean, minimum, maximum don't exist here
+// ```
+
+// All intermediate variables are local to the function — clean and encapsulated.
 
 
 #slide(

@@ -37,7 +37,7 @@ greet("Alice", "morning")          # positional — order matters
 greet("Bob", "evening")
 ```
 
-#pause
+#pagebreak()
 
 *Positional* arguments are matched to parameters *in order* — the first argument goes to the first parameter, the second to the second, and so on.
 
@@ -83,20 +83,20 @@ greet("Bob", "Hi")          # Hi, Bob!
 greet("Carol", greeting="Good morning")   # Good morning, Carol!
 ```
 
-#pause
+#pagebreak()
 
-*Practical example — configurable repeat:*
+// *Practical example — configurable repeat:*
 
-```python
-def repeat_print(message, times=3, separator="-"):
-    for i in range(times):
-        print(message)
-    print(separator * len(message))
+// ```python
+// def repeat_print(message, times=3, separator="-"):
+//     for i in range(times):
+//         print(message)
+//     print(separator * len(message))
 
-repeat_print("Hello")               # 3 times, dashes
-repeat_print("Warning!", times=5)   # 5 times, dashes
-repeat_print("Hi", times=2, separator="=")   # 2 times, equals
-```
+// repeat_print("Hello")               # 3 times, dashes
+// repeat_print("Warning!", times=5)   # 5 times, dashes
+// repeat_print("Hi", times=2, separator="=")   # 2 times, equals
+// ```
 
 = The return Statement
 
@@ -111,7 +111,7 @@ print(square(5) + 1)    # 26
 print(square(square(3)))# 81
 ```
 
-#pause
+#pagebreak()
 
 A function can have *multiple return statements* — the first one reached exits the function:
 
@@ -138,7 +138,7 @@ lo, hi = min_max([3, 1, 7, 4, 2, 8, 5])
 print(f"Min: {lo}, Max: {hi}")   # Min: 1, Max: 8
 ```
 
-#pause
+#pagebreak()
 
 *Tuple unpacking* on the left side:
 
@@ -156,6 +156,76 @@ result = divide_with_remainder(100, 7)
 print(result)   # (14, 2)
 ```
 
+= Conditional Returns
+
+== Ternary Expression
+
+A *ternary expression* returns one of two values on a single line:
+
+```
+return <value_if_true> if <condition> else <value_if_false>
+```
+
+#pause
+
+```python
+def is_even(n):
+    return "even" if n % 2 == 0 else "odd"
+
+def absolute_value(n):
+    return n if n >= 0 else -n
+
+print(is_even(4))           # even
+print(is_even(7))           # odd
+print(absolute_value(-5))   # 5
+```
+
+#pause
+
+#block(
+  fill: blue.lighten(85%),
+  stroke: (paint: blue.lighten(50%), thickness: 1pt),
+  radius: 8pt,
+  inset: 14pt,
+  width: 100%,
+)[
+  Use the ternary when there are exactly *two* outcomes and both fit clearly on one line. For three or more branches, use chained returns instead (see next slide).
+]
+
+== Chained Early Returns
+
+When a function has *multiple branches*, return from each one immediately — no `elif` needed. The first `return` reached exits the function:
+
+```python
+def calculate_grade(score):
+    """Return a letter grade for a numeric score."""
+    if score >= 90: return "A"
+    if score >= 80: return "B"
+    if score >= 70: return "C"
+    if score >= 60: return "D"
+    return "F"           # fallback — only reached if all above are False
+
+print(calculate_grade(95))   # A
+print(calculate_grade(73))   # C
+print(calculate_grade(42))   # F
+```
+
+#pagebreak()
+
+*Why not `elif`?* Once a `return` fires, the function is already finished — Python never reaches the next `if`. This means `elif` is unnecessary, and removing it makes the logic easier to scan top to bottom.
+
+#pause
+
+#block(
+  fill: blue.lighten(85%),
+  stroke: (paint: blue.lighten(50%), thickness: 1pt),
+  radius: 8pt,
+  inset: 14pt,
+  width: 100%,
+)[
+  The final bare `return "F"` is the *catch-all* — it only runs if every condition above was `False`.
+]
+
 = Designing Good Functions
 
 *Good functions:*
@@ -165,7 +235,7 @@ print(result)   # (14, 2)
 - Accept inputs as parameters
 - Return output via `return` (don't `print` inside unless displaying is the function's job)
 
-#pause
+#pagebreak()
 
 ```python
 # BAD — function does too many things and mixes I/O with logic

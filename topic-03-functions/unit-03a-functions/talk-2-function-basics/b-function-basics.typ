@@ -18,6 +18,14 @@
     logo: my-logo,
   ),
 )
+#let note(body) = block(
+  fill: blue.lighten(85%),
+  stroke: (paint: blue.lighten(50%), thickness: 1pt),
+  radius: 8pt,
+  inset: 16pt,
+  width: 100%,
+  body
+)
 #set heading(numbering: numbly("{1}.", default: "1.1"))
 #set page(background: place(left + top, dx: 8.5em, dy: 1em)[#opaque-logo])
 #title-slide()
@@ -40,7 +48,7 @@ A *function* is a named, reusable block of code that performs a specific task.
 
 #pause
 
-You have already used built-in functions: `print()`, `input()`, `len()`, `int()`, `range()`.
+You have already used built-in functions: `print()`, `input()`, `float()`, `int()`.
 
 Now you will write your *own*.
 
@@ -52,8 +60,15 @@ def function_name(parameters):
     # function body
     return value   # optional
 ```
-
-#pause
+#note[
+  *NOTE:*
+  
+The return statement (when there) has two purposes:
+  - to return a value from the function
+  - to exit the function (wherever it appears - see later with *if statements*)
+  
+  ]
+#pagebreak()
 
 *Simplest possible function:*
 
@@ -114,10 +129,11 @@ print(type(result))         # <class 'NoneType'>
 ```
 
 #pause
+#note[ 
+  *NOTE:*
+*`None`* represents "no value" in Python. It is *not* zero, not an empty string — it is the absence of a value.]
 
-`None` represents "no value" in Python. It is *not* zero, not an empty string — it is the absence of a value.
-
-
+#pagebreak()
 *Common mistake:*
 
 ```python
@@ -131,8 +147,12 @@ doubled = result * 2    # TypeError: NoneType * int
 = Docstrings
 
 A *docstring* is a string literal at the top of a function body. It documents what the function does.
+#pagebreak()
 
 ```python
+:
+(part of the calculate.py file)
+:
 def calculate_area(width, height):
     """Calculate and return the area of a rectangle.
 
@@ -146,18 +166,33 @@ def calculate_area(width, height):
     return width * height
 ```
 
-#pause
+#pagebreak()
+#list(
+[Access docstrings with `help()` or `.__doc__`:],
 
-Access docstrings with `help()` or `.__doc__`:
 
+[Use REPL (gp to terminal and run 
+     ```python
+     $python3   #loads the interpreter (REPL)
+     >>> import calculate #imports the calculate.py file
+
+     ```
+    
 ```python
-help(calculate_area)
-print(calculate_area.__doc__)
+>>> print(fi.calculate_area.__doc__)
+Calculate and return the area of a rectangle.
+
+Args:
+    width: The width of the rectangle (number).
+    height: The height of the rectangle (number).
+
+Returns:
+    The area as a number (width * height).
 ```
-
-#pause
-
-*Best practice:* every function should have a docstring.
+     ])
+#pagebreak()
+#note[*NOTE*
+*Best practice:* every function should have a docstring.]
 
 = Functions in Practice
 
@@ -181,14 +216,16 @@ print(f"{freezing_f}°F = {freezing_c}°C")   # 32°F = 0.0°C
 ```
 
 = Building a Program with Functions
-
+#text(size: 13pt)[
 ```python
 def get_student_data():
     """Prompt user for student name and score."""
     name = input("Student name: ")
     score = float(input("Score (0-100): "))
     return name, score
-
+```
+#pause
+```python
 def calculate_grade(score):
     """Return letter grade for a numeric score."""
     if score >= 90: return "A"
@@ -196,17 +233,21 @@ def calculate_grade(score):
     if score >= 70: return "C"
     if score >= 60: return "D"
     return "F"
-
+```
+#pause
+```python
 def print_result(name, score, grade):
     """Print formatted student result."""
     print(f"\n{name}: {score:.1f} → Grade {grade}")
-
+```
+#pause
+```python
 # Main program
 name, score = get_student_data()
 grade = calculate_grade(score)
 print_result(name, score, grade)
 ```
-
+]
 #slide(
     title: none,
     header: none,
