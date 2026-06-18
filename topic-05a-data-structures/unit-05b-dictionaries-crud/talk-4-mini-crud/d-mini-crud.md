@@ -1,7 +1,7 @@
 ---
 icon:
   type: carbon:application-web
-  color: purple
+  color: orange
 ---
 Mini CRUD with Dictionaries
 

@@ -37,20 +37,17 @@ Python uses *LEGB* scope rules:
 - *B* — Built-in: Python's built-in names (`len`, `print`, `range`, ...)
 
 #pause
-
 ```python
 x = 10          # global scope
-
 def my_func():
     y = 20      # local scope
     print(x)    # can read global x
     print(y)    # can read local y
-
 my_func()
 print(y)        # NameError: y is not defined here
 ```
 
-= Local Variables
+= Local Variables 1
 
 Variables created *inside* a function exist only for the duration of that function call.
 
@@ -66,8 +63,7 @@ print(result)   # 15
 
 # print(area)   # NameError — 'area' doesn't exist here
 ```
-
-#pause
+= Local Variables 2
 
 Each call creates a *fresh* set of local variables:
 
@@ -81,7 +77,7 @@ print(count_up(0))   # 1
 print(count_up(5))   # 6
 ```
 
-= Global Variables
+= Global Variables 1
 
 Variables defined *outside* all functions are global and can be *read* anywhere.
 
@@ -95,7 +91,7 @@ say_hello("Alice")   # Hello, Alice
 say_hello("Bob")     # Hello, Bob
 ```
 
-#pause
+= Global Variables 2
 
 *Why avoid global variables?*
 
@@ -124,6 +120,8 @@ print(counter)  # 3
 #pause
 
 *Without* `global`, Python creates a new local variable:
+
+= The `global` Keyword
 
 ```python
 counter = 0
@@ -155,8 +153,21 @@ show()
 print(value)        # 100 — global unchanged
 ```
 
-#pause
+= Scope Examples
+*Example 1 — Better version*
 
+```python
+value = 100
+
+def show(value):
+    value = 999     # update value
+    print(value)    # 999
+    return value
+
+value = show(value)
+print(value)        # 999 updated value
+```
+= Scope Examples
 *Example 2 — Correct pattern (no globals needed):*
 
 ```python
@@ -184,8 +195,7 @@ print(f"Total: €{final_price:.2f}")   # Total: €61.50
   [Use constants in UPPER_CASE], [Signals "don't modify this"],
 )
 
-#pause
-
+= Scope Best Practices
 ```python
 # Good pattern
 MAX_SCORE = 100     # module-level constant (acceptable)

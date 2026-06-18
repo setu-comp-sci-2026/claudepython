@@ -1,7 +1,7 @@
 ---
 icon:
   type: carbon:data-structured
-  color: green
+  color: orange
 ---
 Why Collections?
 

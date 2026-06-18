@@ -207,7 +207,7 @@ while count <= 5:
 = Activities
 == Activity: find the four parts
 
-For each flowchart, identify:
+For the flowchart, identify:
 
 1. Starting value
 2. Condition
@@ -217,6 +217,11 @@ For each flowchart, identify:
 #v(1em)
 #rect(fill: teal, inset: 1em, radius: 8pt)[#text(fill: white, weight: "bold")[This prepares you to write the Python version in the next lecture.]]
 
+== Flowchart
+
+#align(center)[
+  #image("assets/act_loop.png", height: 80%)
+]
 == Predict the output
 
 Flowchart summary:
@@ -248,8 +253,6 @@ Flowchart summary:
     #text(size: 2em, weight: "bold")[
   
     Thanks for Watching - Any questions?
-    
-    #v(2em)
-    
+        
     #image("assets/thanks.png", width: 5cm)
   ]]

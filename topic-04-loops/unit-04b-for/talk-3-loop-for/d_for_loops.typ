@@ -520,7 +520,7 @@ total += mark
 
 = Bringing it together
 == Mini-program: mark report
-
+#set text(size: 16pt)
 ```python
 marks = [72, 38, 55, 90, 41]
 
@@ -543,7 +543,7 @@ print("Highest:", highest)
 ```
 
 == What does this combine?
-
+#set text(size: 21pt)
 - Lists
 - `for` loops
 - Selection
