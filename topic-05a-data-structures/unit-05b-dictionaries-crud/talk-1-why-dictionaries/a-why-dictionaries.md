@@ -1,7 +1,7 @@
 ---
 icon:
   type: carbon:dictionary
-  color: green
+  color: orange
 ---
 Why Dictionaries?
 

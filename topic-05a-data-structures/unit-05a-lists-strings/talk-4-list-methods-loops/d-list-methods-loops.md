@@ -1,7 +1,7 @@
 ---
 icon:
   type: carbon:loop
-  color: purple
+  color: orange
 ---
 List Methods and Loops
 

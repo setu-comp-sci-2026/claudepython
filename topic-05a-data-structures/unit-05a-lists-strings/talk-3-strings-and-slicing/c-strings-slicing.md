@@ -1,7 +1,7 @@
 ---
 icon:
   type: carbon:string-text
-  color: blue
+  color: orange
 ---
 Strings and Slicing
 

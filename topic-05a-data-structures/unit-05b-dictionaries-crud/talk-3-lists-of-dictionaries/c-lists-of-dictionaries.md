@@ -1,7 +1,7 @@
 ---
 icon:
   type: carbon:table-built
-  color: blue
+  color: orange
 ---
 Lists of Dictionaries
 
