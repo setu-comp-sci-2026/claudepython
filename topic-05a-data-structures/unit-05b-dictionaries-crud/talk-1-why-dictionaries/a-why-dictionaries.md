@@ -1,6 +1,6 @@
 ---
 icon:
-  type: carbon:dictionary
+  type: material-symbols:dictionary-outline
   color: orange
 ---
 Why Dictionaries?

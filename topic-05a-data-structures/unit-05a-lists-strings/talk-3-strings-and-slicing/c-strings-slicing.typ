@@ -53,10 +53,10 @@ Slicing extracts part of a list.
 ```python
 numbers = [10, 20, 30, 40, 50, 60]
 
-print(numbers[0:3])
-print(numbers[:3])
-print(numbers[3:])
-print(numbers[-2:])
+print(numbers[0:3]) #[10, 20, 30]
+print(numbers[:3]) #[10, 20, 30]
+print(numbers[3:]) #[40, 50, 60]
+print(numbers[-2:])#[50, 60]
 ```
 
 #pause
@@ -70,10 +70,10 @@ The same idea works with strings.
 ```python
 word = "Programming"
 
-print(word[:4])
-print(word[4:])
-print(word[-3:])
-print(word[::-1])
+print(word[:4]) #Prog
+print(word[4:]) #ramming
+print(word[-3:]) #ing
+print(word[::-1]) #gnimmargorP
 ```
 
 #pause
@@ -90,10 +90,10 @@ Useful for:
 ```python
 name = "  siobhan roche  "
 
-print(name.strip())
-print(name.upper())
-print(name.title())
-print(name.replace("roche", "Roche"))
+print(name.strip()) #siobhan roche
+print(name.upper()) #  SIOBHAN ROCHE 
+print(name.title()) #  Siobhan Roche 
+print(name.replace("roche", "Roche")) #  siobhan Roche  
 ```
 
 #pause

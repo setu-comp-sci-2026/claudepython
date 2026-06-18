@@ -89,9 +89,9 @@ Output:
 ```python
 names = ["Ava", "Ben", "Cara"]
 
-print(len(names))
-print("Ben" in names)
-print("Zara" not in names)
+print(len(names)) #3
+print("Ben" in names) #true
+print("Zara" not in names) #true
 ```
 
 #pause
