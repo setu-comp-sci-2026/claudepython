@@ -5,3 +5,20 @@ icon:
 auth           : 0
 labStepsAutoNumber: true
 ignore         :
+
+# - topic-00-induction
+# - topic-01-data-types
+# - topic-02-control-flow
+# - topic-03-functions
+# - topic-04-loops
+# - topic-05a-data-structures
+# - topic-05b-dictionaries-crud
+# - topic-06-vscode-io
+# - topic-07-classes
+# - topic-08-exceptions
+# - topic-09-collections
+# - topic-10-crud-persistence
+# - topic-11-inheritance
+# - topic-12-abstraction-sorting
+# - topic-13-testing
+- topic-99-misc-topics-not-for-students

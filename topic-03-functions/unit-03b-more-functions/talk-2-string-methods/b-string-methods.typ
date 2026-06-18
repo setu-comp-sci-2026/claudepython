@@ -221,7 +221,11 @@ def clean_and_validate_email(email):
 def title_case_name(name):
     """Clean and format a person's name."""
     return " ".join( name.strip().split().title()) # "Alice Smith"
+```
+#pagebreak()
 
+```python
+# contd.
 # Test
 test1 = "  Mairead Meagher  "
 test2 = "SIOBHAN ROCHE"
