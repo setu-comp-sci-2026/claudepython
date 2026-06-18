@@ -11,8 +11,8 @@
 
 
 #let note(body) = block(
-  fill: blue.lighten(85%),
-  stroke: (paint: blue.lighten(50%), thickness: 1pt),
+  fill: rgb("#c6f1c7"),
+  stroke: (paint: rgb("#4caf50"), thickness: 1.5pt),
   radius: 8pt,
   inset: 16pt,
   width: 100%,
@@ -50,6 +50,15 @@
     logo: my-logo
   ),
   // config-common(handout:true),  for handout version of the slides(no animations, etc.)
+)
+
+#show raw.where(block: true): it => block(
+  fill: rgb("#dbeafe"),
+  stroke: (paint: rgb("#3572A5"), thickness: 1.5pt),
+  radius: 6pt,
+  inset: 12pt,
+  width: 100%,
+  it
 )
 
 #set heading(numbering: numbly("{1}.", default: "1.1"))

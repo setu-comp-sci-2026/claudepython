@@ -15,6 +15,15 @@
   ),
 )
 
+#show raw.where(block: true): it => block(
+  fill: rgb("#dbeafe"),
+  stroke: (paint: rgb("#3572A5"), thickness: 1.5pt),
+  radius: 6pt,
+  inset: 12pt,
+  width: 100%,
+  it
+)
+
 #set heading(numbering: numbly("{1}.", default: "1.1"))
 #set text(size: 21pt)
 

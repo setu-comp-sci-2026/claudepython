@@ -38,7 +38,7 @@ print(name.capitalize())   # Hello world
 print(name.title())        # Hello World
 ```
 
-#pause
+#pagebreak()
 
 *Strings are immutable* — methods return *new* strings, they don't modify the original:
 

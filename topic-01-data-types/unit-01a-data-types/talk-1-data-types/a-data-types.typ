@@ -21,6 +21,15 @@
   // config-common(handout:true),  for handout version of the slides(no animations, etc.)
 )
 
+#show raw.where(block: true): it => block(
+  fill: rgb("#dbeafe"),
+  stroke: (paint: rgb("#3572A5"), thickness: 1.5pt),
+  radius: 6pt,
+  inset: 12pt,
+  width: 100%,
+  it
+)
+
 #set heading(numbering: numbly("{1}.", default: "1.1"))
 #set page(
   background: place(left + top, dx: 8.5em, dy: 1em,)[
