@@ -1,6 +1,6 @@
 ---
 icon:
-  type: carbon:boolean
+  type: mdi:gate-and
   color: red
 ---
 # 02: Boolean algebra
