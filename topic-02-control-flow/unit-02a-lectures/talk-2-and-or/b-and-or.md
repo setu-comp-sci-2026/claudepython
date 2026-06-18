@@ -1,6 +1,6 @@
 ---
 icon:
-  type: carbon:if-else
+  type: carbon:boolean
   color: red
 ---
 # 02: Boolean algebra
