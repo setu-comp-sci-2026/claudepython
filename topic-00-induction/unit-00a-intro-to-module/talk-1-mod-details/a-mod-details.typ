@@ -18,6 +18,15 @@
 )
 #set text(font: "New Computer Modern", size: 11pt)
 #set par(leading: 0.75em, justify: true)
+#show raw.where(block: true): it => block(
+  fill: rgb("#dbeafe"),
+  stroke: (paint: rgb("#3572A5"), thickness: 1.5pt),
+  radius: 6pt,
+  inset: 12pt,
+  width: 100%,
+  it
+)
+
 #set heading(numbering: "1.")
 #show heading: it => { v(0.8em); it; v(0.4em) }
 

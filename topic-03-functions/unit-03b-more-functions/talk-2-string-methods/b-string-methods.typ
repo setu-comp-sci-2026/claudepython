@@ -18,6 +18,15 @@
     logo: my-logo,
   ),
 )
+#show raw.where(block: true): it => block(
+  fill: rgb("#dbeafe"),
+  stroke: (paint: rgb("#3572A5"), thickness: 1.5pt),
+  radius: 6pt,
+  inset: 12pt,
+  width: 100%,
+  it
+)
+
 #set heading(numbering: numbly("{1}.", default: "1.1"))
 #set page(background: place(left + top, dx: 8.5em, dy: 1em)[#opaque-logo])
 #title-slide()
@@ -65,8 +74,7 @@ clean_name = name.strip().title()
 print(clean_name)           # "Alice"
 ```
 
-#pause
-
+#pagebreak()
 ```python
 # Checking methods — return True/False
 print("PYTHON".isupper())       # True
@@ -92,9 +100,10 @@ print(sentence.endswith("dog"))    # True
 print(sentence.startswith("the"))  # False (case-sensitive)
 ```
 
-#pause
+#pagebreak()
 
 ```python
+# .. contd. 
 # Replacing
 new_sentence = sentence.replace("fox", "cat")
 print(new_sentence)
@@ -120,7 +129,7 @@ words = sentence.split()    # splits on any whitespace
 print(words)    # ['the', 'quick', 'brown', 'fox']
 ```
 
-#pause
+#pagebreak()
 
 *`join()`* — glue a list of strings together:
 
@@ -130,10 +139,6 @@ print(" ".join(words))       # Python is great
 print("-".join(words))       # Python-is-great
 print("".join(words))        # Pythonisgreat
 
-# Practical: rebuild a CSV line
-data = ["Bob", "30", "Cork", "Teacher"]
-csv = ",".join(data)
-print(csv)   # Bob,30,Cork,Teacher
 ```
 
 = f-Strings
@@ -146,11 +151,16 @@ age = 25
 score = 87.654
 
 # Basic embedding
-print(f"Name: {name}, Age: {age}")
+print(f"Name: {name}, Age: {age}").       # Name: Alice, Age: 25
 
 # Expressions inside {}
-print(f"Next year I'll be {age + 1}")
+print(f"Next year I'll be {age + 1}")     # Next year I'll be 26
+```
 
+#pagebreak()
+
+```python
+#contd.
 # Number formatting
 print(f"Score: {score:.2f}")        # 87.65
 print(f"Score: {score:.0f}")        # 88
@@ -178,7 +188,7 @@ print(f"{'Centre':^10}|")           #   Centre   |
   [`:<10`], [Left-align width 10],  [`hello      `],
   [`:^10`], [Centre width 10],  [`  hello   `],
 )
-
+#pagebreak()
 ```python
 price = 1234567.89
 print(f"Price: €{price:,.2f}")      # Price: €1,234,567.89
@@ -186,9 +196,13 @@ print(f"Price: €{price:,.2f}")      # Price: €1,234,567.89
 ratio = 0.756
 print(f"Pass rate: {ratio:.1%}")    # Pass rate: 75.6%
 
-items = [("Milk", 1.29), ("Bread", 2.49), ("Eggs", 3.99)]
-for item, cost in items:
-    print(f"  {item:<10} €{cost:>6.2f}")
+item1 = ("Milk", 1.29)
+item2 = ("Bread", 2.49)
+item3 = ("Eggs", 3.99)
+
+print(f"  {item1:<10} €{cost:>6.2f}")  # "  Milk        €1.29"
+print(f"  {item2:<10} €{cost:>6.2f}")  # "  Bread       €2.49"
+print(f"  {item3:<10} €{cost:>6.2f}")  # "  Eggs        €3.99"
 ```
 
 = String Methods in Practice
@@ -200,19 +214,22 @@ def clean_and_validate_email(email):
 
     if "@" not in cleaned:
         return None, "Missing @ symbol"
-    if "." not in cleaned.split("@")[1]:
-        return None, "Invalid domain"
-
+    if "." not in cleaned:
+        return None, "Missing dot"
     return cleaned, "Valid"
 
 def title_case_name(name):
     """Clean and format a person's name."""
-    return " ".join(word.capitalize() for word in name.strip().split())
+    return " ".join( name.strip().split().title()) # "Alice Smith"
 
 # Test
-tests = ["  Alice Smith  ", "BOB JONES", "carol  ann  murphy"]
-for name in tests:
-    print(title_case_name(name))
+test1 = "  Mairead Meagher  "
+test2 = "SIOBHAN ROCHE"
+test3 = "David bowie"
+
+print(title_case_name(test1)). # "Mairead Meagher"
+print(title_case_name(test2)). # "Siobhan Roche"
+print(title_case_name(test3)). # "David Bowie"
 ```
 #slide(
     title: none,
