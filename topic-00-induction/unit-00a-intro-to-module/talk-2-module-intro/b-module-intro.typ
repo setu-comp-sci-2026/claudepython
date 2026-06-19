@@ -319,8 +319,10 @@
 = Starting point for module 
 
 == Where to start?
-Links for tutors, Moodle, Slack, YouTube channel, etc.
+Once you have your tutors link from there you can get your 
 
-== Getting Started
-where to find the first lecture, how to access the labs, etc.
+  - Slack channel,
+  - Moodle link    
 
+
+This will allow you access to the course materials. Join Slack and get to be part of the community. 
