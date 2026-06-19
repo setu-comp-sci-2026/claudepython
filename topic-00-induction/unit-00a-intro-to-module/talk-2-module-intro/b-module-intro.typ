@@ -54,8 +54,10 @@
       gutter: 0.5em,
       [
         *Siobhan Roche*
-        - Profile: #link("https://www.setu.ie/staff/siobhan-roche")[setu.ie/staff/siobhan-roche]
-        - Email: #link("mailto:siobhan.roche@setu.ie")[siobhan.roche\@setu.ie]
+        
+        Profile: #link("https://www.setu.ie/staff/siobhan-roche")[setu.ie/staff/siobhan-roche]
+        
+        Email: #link("mailto:siobhan.roche@setu.ie")[siobhan.roche\@setu.ie]
       ],
       align(center)[
         #image("assets/siobhan.png", width: 21%)
@@ -71,8 +73,10 @@
       gutter: 0.5em,
       [
         *Mairead Meagher*
-        - Profile: #link("https://www.setu.ie/staff/mairead-meagher")[setu.ie/staff/mairead-meagher]
-        - Email: #link("mailto:mairead.meagher@setu.ie")[mairead.meagher\@setu.ie]
+        
+        Profile: #link("https://www.setu.ie/staff/mairead-meagher")[setu.ie/staff/mairead-meagher]
+        
+        Email: #link("mailto:mairead.meagher@setu.ie")[mairead.meagher\@setu.ie]
       ],
       align(center)[
         #image("assets/mairead.png", width: 25%)
@@ -239,9 +243,10 @@
 ]
 
 = Calendar 
-TODO: Add calendar content here.
-= Schedule
-TODO: Add schedule content here.
+
+#align(center)[
+#image("assets/topic-ass-schedule.png")
+]
 
 = Assessment and Interviews
 
