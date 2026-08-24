@@ -11,6 +11,7 @@ ignore         :
 - topic-02-control-flow
 - topic-03-functions
 - topic-04-loops
+- topic-05-lists
 - topic-05a-data-structures
 # - topic-05b-dictionaries-crud
 - topic-06-crud
