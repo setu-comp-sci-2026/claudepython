@@ -4,6 +4,7 @@ icon:
   color: "3572A5"
 auth           : 0
 labStepsAutoNumber: true
+ignorepin      : 2125
 ignore         :
 
 # - topic-00-induction
