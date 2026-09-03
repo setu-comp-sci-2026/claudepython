@@ -97,7 +97,7 @@
 #rect(fill: rgb("#287bd3"), width: 100%, inset: 1em)[
   #set align(center)
   #set text(fill: white, size: 28pt, weight: "bold")
-  10 weeks of delivery
+  12 weeks of delivery
 ]
 
 // Schedule grid

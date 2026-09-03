@@ -117,7 +117,7 @@
 // ═════════════════════════════════════════════════════════════════════════════
 = How to reach us
 
-- The quickest way to reach us is via the main Slack channel. We will be using this as the main form of communication for this module. You can join our Slack channel at #link("https://setu.ie/slack")[https://setu.ie/slack].
+- The quickest way to reach us is via the main Slack channel. We will be using this as the main form of communication for this module. You can join our Slack channel at #link("https://setu.ie/slack")[https://setu-comp-sci-26.slack.com].
 
 - We are available during work hours from Monday to Friday. You can email/Slack us outside of these hours and we will reply as soon as we can, but always within three days. (If this does not happen, assume your contact has gone into spam etc. and please re-contact us.) If you are  emailing us, please indicate what module you are taking as well as the nature of your query in the subject line, and do not forget to use an appropriate greeting and sign off. Whether communicating via email or Slack, please be polite. It's important to be polite and to treat one another with respect; let's start as we mean to go on.
 
